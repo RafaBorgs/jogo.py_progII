@@ -1,0 +1,41 @@
+import random
+
+def escolher_palavra():
+    palavras = ["python", "programacao", "curso", "jogo", "sol", "brasil", "paralelepipedo", "luz", "arvore","pular", "jogar", "estudar",
+                "areia", "estrada", "ovo", "zebra", "palco", "pata", "animal", "ciencia", "historia", "cultura", "geografia", "politica", 
+                "tecnologia", "educacao", "sociedade", "economia", "ambiente", "literatura", "arte", "religiao", "saude", "esporte","paz"]
+    return random.choice(palavras)
+
+def jogar_adivinhacao_de_palavras():
+    palavra_secreta = escolher_palavra()
+    palavra_descoberta = ["_"] * len(palavra_secreta)
+    tentativas = 6  
+
+    print("Bem-vindo ao Jogo da forca!")
+    print("A palavra tem", len(palavra_secreta), "letras.")
+
+    while tentativas > 0:
+        print(" ".join(palavra_descoberta))
+        letra = input("Digite uma LETRA: ").lower()
+
+        if len(letra) != 1 or not letra.isalpha():
+            print("Por favor, digite uma única letra.")
+            continue
+
+        if letra in palavra_secreta:
+            for i in range(len(palavra_secreta)):
+                if palavra_secreta[i] == letra:
+                    palavra_descoberta[i] = letra
+        else:
+            tentativas -= 1
+            print(f"Letra '{letra}' não está na palavra. Você tem {tentativas} tentativas restantes.")
+
+        if "".join(palavra_descoberta) == palavra_secreta:
+            print("Parabéns! Você adivinhou a palavra correta:", palavra_secreta)
+            break
+
+    if "".join(palavra_descoberta) != palavra_secreta:
+        print("Você perdeu! A palavra correta era:", palavra_secreta)
+
+if __name__ == "__main__":
+    jogar_adivinhacao_de_palavras()
