@@ -1,0 +1,28 @@
+resumidamente o que acontece no código:
+
+O código começa importando o módulo random para escolher aleatoriamente uma palavra da lista.
+
+A função escolher_palavra() é definida para selecionar uma palavra aleatória da lista palavras.
+
+A função principal jogar_adivinhacao_de_palavras() é definida. Ela faz o seguinte:
+
+Chama a função escolher_palavra() para selecionar a palavra que o jogador precisa adivinhar.
+Inicializa uma lista chamada palavra_descoberta com underscores "_" do mesmo tamanho da palavra escolhida para ocultar a palavra secreta.
+Define o número máximo de tentativas como 6.
+Imprime uma mensagem de boas-vindas e informa o número de letras na palavra secreta.
+O jogo acontece em um loop while que continua enquanto o número de tentativas for maior que 0.
+
+A cada iteração, o jogo exibe a palavra atualmente descoberta, mostrando letras adivinhadas e underscores.
+Solicita ao jogador que insira uma única letra.
+Verifica se  é uma letra  do alfabeto.
+Se a letra estiver na palavra secreta, substitui os underscores em palavra_descoberta pelas letras corretas nas posições correspondentes.
+Se a letra não estiver na palavra secreta, decrementa o número de tentativas restantes e informa ao jogador quantas tentativas restantes ele tem.
+O loop continua até que o jogador tenha adivinhado corretamente a palavra ou até que ele tenha esgotado todas as tentativas.
+
+Se o jogador adivinhar corretamente a palavra, o jogo exibe uma mensagem de parabéns e mostra a palavra correta.
+
+Se o jogador esgotar todas as tentativas sem adivinhar a palavra correta, o jogo informa ao jogador que ele perdeu e revela a palavra secreta.
+
+O jogo é iniciado chamando a função jogar_adivinhacao_de_palavras() apenas se o módulo estiver sendo executado como o programa principal 
+(condição if __name__ == "__main__":). Isso significa que o jogo será executado somente quando você executar este arquivo como um programa, 
+não quando você importá-lo como um módulo em outro código.
